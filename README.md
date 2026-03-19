@@ -179,7 +179,7 @@ const store = new TachyoManager({ count: 0 });
 - **~8.5 Million ops/sec** for simple state modifications (highly conservative).
 - **~19.0 Million ops/sec** for history navigation (Undo/Redo).
 
-It consistently matches or beats ultra-minimal libraries (like Zustand) while carrying heavy-duty features like Action Tracking and Deep Object Path comparisons out-of-the-box. Perfect for demanding real-time dashboards and game engines.
+It's important to note that while **tachyo** ships with heavy-duty features like Action Tracking and Deep Object comparisons, these features are perfectly isolated and opt-in. This extreme architectural optimization allows tachyo's baseline state modifications to perform **completely on par with the world's most ultra-minimal libraries (like Zustand and Redux)**. You get a fully-featured, enterprise-grade engine without sacrificing a single drop of vanilla performance.
 
 ### 🚀 Zero Dependencies
 
