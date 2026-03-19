@@ -1,6 +1,6 @@
 {
   "name": "tachyo",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Type-safe state management with undo/redo, async tracking, and React integration",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
