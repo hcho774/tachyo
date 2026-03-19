@@ -85,38 +85,37 @@ export function useTachyo<T extends object>(
   const canUndo = manager.canUndo();
   const canRedo = manager.canRedo();
 
-  // Wrapper functions with proper ref handling
   const updateState = useCallback((newState: Partial<T> | T) => {
     const currentManager = managerRef.current;
-    if (currentManager && mountedRef.current) {
+    if (currentManager) {
       currentManager.setState(newState);
     }
   }, []);
 
   const setProperty = useCallback(<K extends keyof T>(property: K, value: T[K]) => {
     const currentManager = managerRef.current;
-    if (currentManager && mountedRef.current) {
+    if (currentManager) {
       currentManager.setProperty(property, value);
     }
   }, []);
 
   const undo = useCallback(() => {
     const currentManager = managerRef.current;
-    if (currentManager && mountedRef.current) {
+    if (currentManager) {
       currentManager.undo();
     }
   }, []);
 
   const redo = useCallback(() => {
     const currentManager = managerRef.current;
-    if (currentManager && mountedRef.current) {
+    if (currentManager) {
       currentManager.redo();
     }
   }, []);
 
   const reset = useCallback((newInitialState?: T) => {
     const currentManager = managerRef.current;
-    if (currentManager && mountedRef.current) {
+    if (currentManager) {
       currentManager.reset(newInitialState);
     }
   }, []);
