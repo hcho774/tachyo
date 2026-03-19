@@ -12,13 +12,13 @@ synct provides built-in undo/redo, change path tracking, and async flow debuggin
 ## Installation
 
 ```bash
-npm install synctx
+npm install tachyo
 ```
 
 ## Quick Start
 
 ```typescript
-import { SynctManager } from 'synctx';
+import { SynctManager } from 'tachyo';
 
 const store = new SynctManager({ count: 0 }, { autoSnapshot: true });
 
@@ -35,7 +35,7 @@ store.redo(); // Forward to count: 2
 ## React Integration
 
 ```tsx
-import { useSynct } from 'synctx/react';
+import { useSynct } from 'tachyo/react';
 
 function Counter() {
   const { state, setState, undo, redo, canUndo, canRedo } = useSynct(
@@ -160,13 +160,13 @@ Works with React, Vue, and vanilla JavaScript.
 
 ```typescript
 // React
-import { useSynct } from 'synctx/react';
+import { useSynct } from 'tachyo/react';
 
 // Vue (coming soon)
 // import { useSynct } from 'synct/vue';
 
 // Vanilla JS - no framework needed!
-import { SynctManager } from 'synctx';
+import { SynctManager } from 'tachyo';
 const store = new SynctManager({ count: 0 });
 ```
 
@@ -231,7 +231,7 @@ const store = new SynctManager(initialState, {
 ## Complete example
 
 ```tsx
-import { useSynct } from 'synctx/react';
+import { useSynct } from 'tachyo/react';
 
 interface TodoState {
   todos: { id: string; text: string; completed: boolean }[];
@@ -278,7 +278,7 @@ function TodoApp() {
 ## Vanilla usage (outside React)
 
 ```typescript
-import { SynctManager } from 'synctx';
+import { SynctManager } from 'tachyo';
 
 const gameStore = new SynctManager(
   { score: 0, level: 1, lives: 3 },
@@ -325,7 +325,7 @@ gameStore.subscribeToProperty('score', (newScore, oldScore) => {
 synct is written in TypeScript and works best with it. No special TypeScript types needed!
 
 ```typescript
-import { SynctManager } from 'synctx';
+import { SynctManager } from 'tachyo';
 
 interface ShoppingCartState {
   items: { id: string; name: string; price: number; quantity: number }[];

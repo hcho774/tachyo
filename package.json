@@ -1,5 +1,5 @@
 {
-  "name": "synctx",
+  "name": "tachyo",
   "version": "0.1.0",
   "description": "Type-safe state management with undo/redo, async tracking, and React integration",
   "main": "dist/index.js",
