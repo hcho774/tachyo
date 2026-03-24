@@ -1,6 +1,6 @@
 {
   "name": "tachyo",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Ultra-fast, zero-dependency state engine matching minimal libraries while providing native Undo/Redo & JSON diffing",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
