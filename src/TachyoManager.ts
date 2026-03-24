@@ -643,11 +643,12 @@ export class TachyoManager<T extends object> extends SimpleEventEmitter {
     this._history.push(entry);
     this._historyIndex = this._history.length - 1;
 
-    // Limit history size — use splice(0, excess) and adjust index by the exact
-    // number of entries removed so undo() can still reach the earliest available state.
+    // Limit history size while always preserving history[0] as the initial-state anchor.
+    // splice(1, excess) skips index 0 so the original snapshot is never deleted,
+    // guaranteeing that undo() can always reach the very first state.
     if (this._history.length > this._options.maxHistorySize) {
       const excess = this._history.length - this._options.maxHistorySize;
-      this._history.splice(0, excess);
+      this._history.splice(1, excess);
       this._historyIndex = Math.max(0, this._historyIndex - excess);
     }
   }
