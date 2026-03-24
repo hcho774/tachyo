@@ -161,8 +161,8 @@ const store = new TachyoManager({ count: 0 });
 
 **tachyo** is carefully designed and V8 micro-optimized directly at the physical JS engine allocation limits.
 
-- **~8.5 Million ops/sec** for simple state modifications (highly conservative).
-- **~19.0 Million ops/sec** for history navigation (Undo/Redo).
+- **~8.5 Million ops/sec** for simple state modifications (Node.js / V8 benchmark).
+- **~19.0 Million ops/sec** for history navigation (Undo/Redo) (Node.js / V8 benchmark).
 
 All heavy features (Action Tracking, Deep Object comparisons) are perfectly isolated and opt-in, so baseline performance is **completely on par with the world's most minimal libraries (like Zustand and Redux)**.
 
@@ -352,7 +352,7 @@ const store = new TachyoManager(initialState, {
 | **Change Path Tracking** | ✅ | ❌ | ❌ | ❌ |
 | **Async Action Tracking** | ✅ | ❌ | ❌ | ❌ |
 | **Redux DevTools** | ✅ Auto | ✅ (manual setup) | ⚠️ | ✅ |
-| **Performance (ops/sec)**| **~8.5M** | ~7.5M | N/A | ~8.0M |
+| **Performance (ops/sec)**| **~8.5M** (Node.js) | ~7.5M (Node.js) | N/A | ~8.0M (Node.js) |
 | **Simple API** | ✅ | ✅ | ✅ | ❌ |
 | **Type Safety** | ✅ | ✅ | ✅ | ✅ |
 | **Zero Dependencies** | ✅ | ✅ | ✅ | ❌ |
